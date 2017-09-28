@@ -62,7 +62,7 @@ For the training and validation process, I used Adam Optimizer to update the lea
 
 [image1]: ./LeavingLane.jpg "Leaving Lane"
 [image2]: ./LeavingLane2.jpg "Other Leaving Lane"
-[image3]: ./Specific_Contrats.jpg "Specific Lane Delimitations"
+[image3]: ./Specific_Contrasts.jpg "Specific Lane Delimitations"
 
 The most critical part, however, was selecting appropriate training data. At first, I only drove as I normaly would, most of the times I was at the center of the lane and the steering angle didn't change quickly nor was ever to great. Howerver, this procedure was proven wrong, since no data was sampled for critical situations, additionaly, the steering angle never was big even when obviously necessary (the car would leave the lane).
 After noticing this, I changed my approach. Instead of focusing on how to drive as I normally would, I sampled situations where the car would live the lane if no strong action is taken. For the same neural network, the autonomous driving worked much better and completed the whole circuit. 
@@ -73,6 +73,7 @@ In the video.mp4  it becomes very clear that the behaviour isn't ideal, since th
 ![Manualy increasing the amount of data for less frequent lane delimitations][image3] 
 
 In addition, the different types of lane delimitations apper with different frequencies in the circuit, which demands manually creating more training examples for more rare delimitations. A very clear example is the curve in the curve "pit stop" area, becase that is the only occasion where it appears, and for a very short distance. 
+
 
 Furtheremore, I augmented the data by creating mirrored images from the original dataset. This process brings 2 advantages:
 1) More training examples -> better accuracy and less overfitting
